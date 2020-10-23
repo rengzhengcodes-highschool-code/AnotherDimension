@@ -18,7 +18,7 @@ public class ArrayOps {
     }
 
     return largest;
- }
+  }
 
   public static int[] sumRows(int[][] matrix) {
     int[]sums = new int[matrix.length];
@@ -29,4 +29,5 @@ public class ArrayOps {
 
     return sums;
   }
+  
 }
