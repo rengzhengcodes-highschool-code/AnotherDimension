@@ -10,6 +10,12 @@ public class Tester {
     sum2DTester();
   }
 
+  public static void errorMessage() {
+    for (int i = 0; i < 3; i++) {
+      System.out.println("ERROR");
+    }
+  }
+
   public static void sumTester() {
     int[][][] sumTestArrsAndAnswer = {                                          //formatting is {testArray, {answer}}
       {{}, {0}},
@@ -22,6 +28,7 @@ public class Tester {
       if (ArrayOps.sum(sumTestArrsAndAnswer[test][0]) == sumTestArrsAndAnswer[test][1][0]) {
         System.out.println("sum function passed test at index: " + test);
       } else {
+        errorMessage();
         System.out.println("sum function failed test at index: " + test);
       }
     }
@@ -42,6 +49,7 @@ public class Tester {
       if (ArrayOps.largest(largestTestArrsAndAnswer[test][0]) == largestTestArrsAndAnswer[test][1][0]) {
         System.out.println("largest function passed test at index: " + test);
       } else {
+        errorMessage();
         System.out.println("largest function failed test at index: " + test);
       }
     }
@@ -76,6 +84,7 @@ public class Tester {
       if (Arrays.equals(ArrayOps.sumRows(sumRowsTestArrsAndAnswer[test][0]), sumRowsTestArrsAndAnswer[test][1][0])) {
         System.out.println("sumRows function passed test at index: " + test);
       } else {
+        errorMessage();
         System.out.println("sumRows function failed test at index: " + test);
       }
     }
@@ -107,6 +116,7 @@ public class Tester {
       if (Arrays.equals(ArrayOps.largestInRows(largestInRowsTestArrsAndAnswer[test][0]), largestInRowsTestArrsAndAnswer[test][1][0])) {
         System.out.println("largestInRows function passed test at index: " + test);
       } else {
+        errorMessage();
         System.out.println("largestInRows function failed test at index: " + test);
       }
     }
@@ -144,6 +154,7 @@ public class Tester {
       if (ArrayOps.sum(sum2DTesterArrsAndAnswer[test][0]) == sum2DTesterArrsAndAnswer[test][1][0][0]) {
         System.out.println("sums2D function passed test at index: " + test);
       } else {
+        errorMessage();
         System.out.println("sums2D function failed test at index: " + test);
       }
     }
