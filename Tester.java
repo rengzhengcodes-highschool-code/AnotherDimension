@@ -1,8 +1,11 @@
+import java.util.Arrays;
+
 public class Tester {
 
   public static void main(String[] args) {
     sumTester();
     largestTester();
+    sumRowsTester();
   }
 
   public static void sumTester() {
@@ -13,7 +16,7 @@ public class Tester {
       {{-1, 1, 3}, {3}},
     };
 
-    for (int test = 0;test < sumTestArrsAndAnswer.length ; test++) {
+    for (int test = 0; test < sumTestArrsAndAnswer.length; test++) {
       if (ArrayOps.sum(sumTestArrsAndAnswer[test][0]) == sumTestArrsAndAnswer[test][1][0]) {
         System.out.println("sum function passed test at index: " + test);
       } else {
@@ -38,6 +41,28 @@ public class Tester {
         System.out.println("largest function passed test at index: " + test);
       } else {
         System.out.println("largest function failed test at index: " + test);
+      }
+    }
+  }
+
+  public static void sumRowsTester() {
+    int[][][][] sumRowsTestArrsAndAnswer = {                                     //formatting is {test matrix, answer array}
+      { //test matrix + answer array array pair.
+        {//test matrix
+          {},
+          {0},
+          {1, 2, 3, 4, 5},
+          {-1, 1, 3}
+        },//test matrix end
+        {{0, 0, 15, 3}}//answer array. It's inside another array like the previous answers to compensate for the extra dimension.
+      } //test matrix + answer array answer pair end
+    };
+
+    for (int test = 0; test < sumRowsTestArrsAndAnswer.length; test++) {
+      if (Arrays.equals(ArrayOps.sumRows(sumRowsTestArrsAndAnswer[test][0]), sumRowsTestArrsAndAnswer[test][1][0])) {
+        System.out.println("sumRows function passed test at index: " + test);
+      } else {
+        System.out.println("sumRows function failed test at index: " + test);
       }
     }
   }

@@ -11,7 +11,7 @@ public class ArrayOps {
   public static  int largest(int[] arr) {
     int largest = arr[0];
 
-    for (int index = 1; index < arr.length ; index++) {
+    for (int index = 1; index < arr.length; index++) {
       if (arr[index] > largest) {
         largest = arr[index];
       }
@@ -20,4 +20,13 @@ public class ArrayOps {
     return largest;
  }
 
+  public static int[] sumRows(int[][] matrix) {
+    int[]sums = new int[matrix.length];
+
+    for (int row = 0; row < matrix.length; row++) {
+      sums[row] = sum(matrix[row]);
+    }
+
+    return sums;
+  }
 }
