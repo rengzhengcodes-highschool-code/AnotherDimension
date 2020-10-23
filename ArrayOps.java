@@ -39,5 +39,16 @@ public class ArrayOps {
 
     return largests;
   }
-  
+
+  public static  int sum(int[][] arr) {
+    int[] sumOfRows = sumRows(arr);
+    int sum = 0;
+
+    for (int index = 0; index < arr.length; index++) {
+      sum += sumOfRows[index];
+    }
+
+    return sum;
+  }
+
 }
