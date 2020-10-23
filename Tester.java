@@ -55,7 +55,19 @@ public class Tester {
           {-1, 1, 3}
         },//test matrix end
         {{0, 0, 15, 3}}//answer array. It's inside another array like the previous answers to compensate for the extra dimension.
-      } //test matrix + answer array answer pair end
+      }, //test matrix + answer array answer pair end
+      {//test matrix + answer array array pair
+        {//test matrix
+          {},
+        },//test matrix end
+        {{0}}
+      }, //test matrix + answer array answer pair sumTestArrsAndAnswer
+      {//test matrix + answer array array pair
+        {//test matrix
+          {0},
+        },//test matrix end
+        {{0}}
+      }, //test matrix + answer array answer pair sumTestArrsAndAnswer
     };
 
     for (int test = 0; test < sumRowsTestArrsAndAnswer.length; test++) {
