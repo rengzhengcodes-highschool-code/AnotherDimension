@@ -8,7 +8,7 @@ public class ArrayOps {
     return total;
   }
 
-  public static  int largest(int[] arr) {
+  public static int largest(int[] arr) {
     int largest = arr[0];
 
     for (int index = 1; index < arr.length; index++) {
@@ -28,6 +28,16 @@ public class ArrayOps {
     }
 
     return sums;
+  }
+
+  public static int[] largestInRows(int[][] matrix) {
+    int[] largests = new int[matrix.length];
+
+    for (int row = 0; row < matrix.length; row++) {
+      largests[row] = largest(matrix[row]);
+    }
+
+    return largests;
   }
   
 }

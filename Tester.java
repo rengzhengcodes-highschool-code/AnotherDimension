@@ -6,6 +6,7 @@ public class Tester {
     sumTester();
     largestTester();
     sumRowsTester();
+    largestInRowsTester();
   }
 
   public static void sumTester() {
@@ -79,4 +80,35 @@ public class Tester {
     }
   }
 
+  public static void largestInRowsTester() {
+    int[][][][] largestInRowsTestArrsAndAnswer = {
+      { //test matrix + answer array array pair.
+        {//test matrix
+          {0},
+          {-1},
+          {1},
+          {0, -2, -1},
+          {1, 2, 3, 4, 5},
+          {-1, 1, 3},
+          {-1, -2, -5, 0}
+        },//test matrix end
+        {{0, -1, 1, 0, 5, 3, 0}}//answer array. It's inside another array like the previous answers to compensate for the extra dimension.
+      }, //test matrix + answer array answer pair end
+      {//test matrix + answer array array s
+        {//test matrix
+          {0}
+        },//test matrix end
+        {{0}} //answer array.
+      } //test matrix + answer array answer pair end
+    };
+
+    for (int test = 0; test < largestInRowsTestArrsAndAnswer.length; test++) {
+      if (Arrays.equals(ArrayOps.largestInRows(largestInRowsTestArrsAndAnswer[test][0]), largestInRowsTestArrsAndAnswer[test][1][0])) {
+        System.out.println("largestInRows function passed test at index: " + test);
+      } else {
+        System.out.println("largestInRows function failed test at index: " + test);
+      }
+    }
+  }
+  
 }
