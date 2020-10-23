@@ -13,9 +13,9 @@ public class Tester {
     };
     for (int test = 0;test < sumTestArrsAndAnswer.length ; test++) {
       if (ArrayOps.sum(sumTestArrsAndAnswer[test][0]) == sumTestArrsAndAnswer[test][1][0]) {
-        System.out.println("sums function passed test at index: " + test);
+        System.out.println("sum function passed test at index: " + test);
       } else {
-        System.out.println("sums function failed test at index: " + test);
+        System.out.println("sum function failed test at index: " + test);
       }
     }
   }
