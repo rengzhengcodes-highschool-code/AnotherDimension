@@ -8,6 +8,8 @@ public class Tester {
     sumRowsTester();
     largestInRowsTester();
     sum2DTester();
+    colsToRowsTester();
+    sumColsTester();
   }
 
   public static void errorMessage() {
@@ -156,6 +158,140 @@ public class Tester {
       } else {
         errorMessage();
         System.out.println("sums2D function failed test at index: " + test);
+      }
+    }
+  }
+
+  public static void colsToRowsTester() {
+    int[][][][] colsToRowsTestArrsAndAnswer = {
+      { //test matrix + answer array array pair.
+        {//test matrix
+          {1, 3, 4, 5, 6, -10, 1},
+          {4, 5, 5, 4, 3, 2, 3},
+        },//test matrix end
+        {//answer matrix
+          {1, 4},
+          {3, 5},
+          {4, 5},
+          {5, 4},
+          {6, 3},
+          {-10, 2},
+          {1, 3}
+        }//answer array. It's inside another array like the previous answers to compensate for the extra dimension.
+      }, //test matrix + answer array answer pair end
+      { //test matrix + answer array array pair.
+        {//test matrix
+          {1},
+        },//test matrix end
+        {//answer matrix
+          {1},
+        }//answer matrix end
+      }, //test matrix + answer array answer pair end
+      { //test matrix + answer array array pair.
+        {//test matrix
+          {},
+        },//test matrix end
+        {//answer matrix
+          {},
+        }//answer matrix end
+      }, //test matrix + answer array answer pair end
+      { //test matrix + answer array array pair.
+        {//test matrix
+          {},
+          {},
+        },//test matrix end
+        {//answer matrix
+          {},
+        }//answer matrix end
+      }, //test matrix + answer array answer pair end
+      { //test matrix + answer array array pair.
+        {//test matrix
+          {-1, 0, 3, 4, 5},
+        },//test matrix end
+        {//answer matrix
+          {-1},
+          {0},
+          {3},
+          {4},
+          {5}
+        }//answer matrix end
+      }, //test matrix + answer array answer pair end
+      { //test matrix + answer array array pair.
+        {//test matrix
+          {-1},
+          {0},
+          {3},
+          {4},
+          {5}
+        },//test matrix end
+        {//answer matrix
+          {-1, 0, 3, 4, 5},
+        }//answer matrix end
+      }, //test matrix + answer array answer pair end
+    };
+
+    for (int test = 0; test < colsToRowsTestArrsAndAnswer.length; test++) {
+      if (Arrays.deepEquals(ArrayOps.colsToRows(colsToRowsTestArrsAndAnswer[test][0]), colsToRowsTestArrsAndAnswer[test][1])) {
+        System.out.println("colsToRows function passed test at index: " + test);
+      } else {
+        errorMessage();
+        System.out.println("colsToRows function failed test at index: " + test);
+      }
+    }
+  }
+
+  public static void sumColsTester() {
+    int[][][][] sumColsTestArrsAndAnswer = {
+      { //test matrix + answer array array pair.
+        {//test matrix
+          {1, 3, 4, 5, 6, -10, 1},
+          {4, 5, 5, 4, 3, 2, 3},
+        },//test matrix end
+          {{5, 8, 9, 9, 9, -8, 4}}//answer array. It's inside another array like the previous answers to compensate for the extra dimension.
+      }, //test matrix + answer array answer pair end
+      { //test matrix + answer array array pair.
+        {//test matrix
+          {1},
+        },//test matrix end
+          {{1}}//answer array. It's inside another array like the previous answers to compensate for the extra dimension.
+      }, //test matrix + answer array answer pair end
+      { //test matrix + answer array array pair.
+        {//test matrix
+          {},
+        },//test matrix end
+          {{0}}//answer array. It's inside another array like the previous answers to compensate for the extra dimension.
+      }, //test matrix + answer array answer pair end
+      { //test matrix + answer array array pair.
+        {//test matrix
+          {},
+          {},
+        },//test matrix end
+        {{0}}//answer array. It's inside another array like the previous answers to compensate for the extra dimension.
+      }, //test matrix + answer array answer pair end
+      { //test matrix + answer array array pair.
+        {//test matrix
+          {-1, 0, 3, 4, 5},
+        },//test matrix end
+        {{-1, 0, 3, 4, 5}}//answer array. It's inside another array like the previous answers to compensate for the extra dimension.
+      }, //test matrix + answer array answer pair end
+      { //test matrix + answer array array pair.
+        {//test matrix
+          {-1},
+          {0},
+          {3},
+          {4},
+          {5}
+        },//test matrix end
+        {{11}}//answer array. It's inside another array like the previous answers to compensate for the extra dimension.
+      }, //test matrix + answer array answer pair end
+    };
+
+    for (int test = 0; test < sumColsTestArrsAndAnswer.length; test++) {
+      if (Arrays.equals(ArrayOps.sumCols(sumColsTestArrsAndAnswer[test][0]), sumColsTestArrsAndAnswer[test][1][0])) {
+        System.out.println("sumCols function passed test at index: " + test);
+      } else {
+        errorMessage();
+        System.out.println("sumCols function failed test at index: " + test);
       }
     }
   }

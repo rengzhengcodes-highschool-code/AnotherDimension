@@ -40,7 +40,7 @@ public class ArrayOps {
     return largests;
   }
 
-  public static  int sum(int[][] arr) {
+  public static int sum(int[][] arr) {
     int[] sumOfRows = sumRows(arr);
     int sum = 0;
 
@@ -49,6 +49,27 @@ public class ArrayOps {
     }
 
     return sum;
+  }
+
+  public static int[][] colsToRows(int[][] matrix) {
+    int[][] colsAsRows = new int[matrix[0].length][matrix.length];
+
+    if (matrix[0].length != 0) {
+      for (int row = 0; row < matrix.length; row++) {
+        for (int column = 0; column < matrix[0].length; column++) {
+          colsAsRows[column][row] = matrix[row][column];
+        }
+      }
+    } else {
+      int[][] emptyIntArray = {{}};
+      return emptyIntArray;
+    }
+
+    return colsAsRows;
+  }
+
+  public static int[] sumCols(int[][] matrix) {                                 //function doesn't work if empty array in columns (so {{}} ) doesn't work.
+    return sumRows(colsToRows(matrix));
   }
 
 }
