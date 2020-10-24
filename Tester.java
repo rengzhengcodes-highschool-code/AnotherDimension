@@ -10,6 +10,7 @@ public class Tester {
     sum2DTester();
     colsToRowsTester();
     sumColsTester();
+    isRowMagicTester();
   }
 
   public static void errorMessage() {
@@ -19,6 +20,7 @@ public class Tester {
   }
 
   public static void sumTester() {
+    System.out.println("\n sum Function Test \n");
     int[][][] sumTestArrsAndAnswer = {                                          //formatting is {testArray, {answer}}
       {{}, {0}},
       {{0}, {0}},
@@ -37,6 +39,7 @@ public class Tester {
   }
 
   public static void largestTester() {
+    System.out.println("\n largest Function Test \n");
     int[][][] largestTestArrsAndAnswer = {                                      //formatting is {testArray, {answer}}
       {{0}, {0}},
       {{-1}, {-1}},
@@ -58,6 +61,7 @@ public class Tester {
   }
 
   public static void sumRowsTester() {
+    System.out.println("\n sumRowTester Function Test \n");
     int[][][][] sumRowsTestArrsAndAnswer = {                                     //formatting is {test matrix, answer array}
       { //test matrix + answer array array pair.
         {//test matrix
@@ -93,6 +97,7 @@ public class Tester {
   }
 
   public static void largestInRowsTester() {
+    System.out.println("\n largestInRows Function Test \n");
     int[][][][] largestInRowsTestArrsAndAnswer = {
       { //test matrix + answer array array pair.
         {//test matrix
@@ -125,6 +130,7 @@ public class Tester {
   }
 
   public static void sum2DTester() {
+    System.out.println("\n sum2D Function Test \n");
     int[][][][] sum2DTesterArrsAndAnswer = {
       {// matrix and answer array array pair
         {//test matrix
@@ -163,6 +169,7 @@ public class Tester {
   }
 
   public static void colsToRowsTester() {
+    System.out.println("\n colsToRows Function Test \n");
     int[][][][] colsToRowsTestArrsAndAnswer = {
       { //test matrix + answer array array pair.
         {//test matrix
@@ -241,6 +248,7 @@ public class Tester {
   }
 
   public static void sumColsTester() {
+    System.out.println("\n sumCols Function Test \n");
     int[][][][] sumColsTestArrsAndAnswer = {
       { //test matrix + answer array array pair.
         {//test matrix
@@ -288,6 +296,64 @@ public class Tester {
 
     for (int test = 0; test < sumColsTestArrsAndAnswer.length; test++) {
       if (Arrays.equals(ArrayOps.sumCols(sumColsTestArrsAndAnswer[test][0]), sumColsTestArrsAndAnswer[test][1][0])) {
+        System.out.println("sumCols function passed test at index: " + test);
+      } else {
+        errorMessage();
+        System.out.println("sumCols function failed test at index: " + test);
+      }
+    }
+  }
+
+  public static void isRowMagicTester() {
+    System.out.println("\n isRowMagic Function Test \n");
+    int[][][] isRowMagicArrs = {
+      {//index 0
+        {0,0,0,0,0},
+        {0,0,0,0,0}
+      },
+      {//index 1
+        {}
+      },
+      {//index 2
+        {0}
+      },
+      {//index 3
+        {10}
+      },
+      {//index 4
+        {1, 23, 2}
+      },
+      {//index 5
+        {1, 2, 3, 4},
+        {-2, 3, 4, 5},
+        {-1, -1, -1, 13},
+        {20, -9, -3, 2}
+      },
+      {//index 6
+        {1, 2, 32, 4},
+        {-82, 763, 43, 95},
+        {-21, 231, -54351, 123},
+        {2230, -39, -23, 2443}
+      },
+      {//index 7
+        {1},
+        {2},
+      }
+    };
+
+    boolean[] isRowMagicAnswers = {
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+    };
+
+    for (int test = 0; test < isRowMagicArrs.length; test++) {
+      if (ArrayOps.isRowMagic(isRowMagicArrs[test]) == isRowMagicAnswers[test]) {
         System.out.println("sumCols function passed test at index: " + test);
       } else {
         errorMessage();
