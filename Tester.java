@@ -168,6 +168,13 @@ public class Tester {
       },//matrix and answer array array pair end
       {// matrix and answer array array pair
         {//test matrix
+          {},
+          {}
+        },//test matrix end
+        {{0}}
+      },//matrix and answer array array pair end
+      {// matrix and answer array array pair
+        {//test matrix
           {1},
           {0},
           {1, 2, 3, 4, 5},
@@ -389,6 +396,10 @@ public class Tester {
         {1, 1, 1},
         {2, 2, 2},
         {3, 3, 3}
+      },
+      {//index 11
+        {},
+        {},
       }
     };
 
@@ -404,6 +415,7 @@ public class Tester {
       true,
       false,
       false,
+      true,
     };
 
     for (int test = 0; test < isRowMagicTestArrs.length; test++) {
@@ -466,6 +478,10 @@ public class Tester {
         {1, 1, 1},
         {2, 2, 2},
         {3, 3, 3}
+      },
+      {//index 11
+        {},
+        {},
       }
     };
 
@@ -480,6 +496,7 @@ public class Tester {
       true,
       true,
       false,
+      true,
       true
     };
 
@@ -514,10 +531,20 @@ public class Tester {
           {1, 1}
         }
       },
+      {//test array 2
+        {//matrix
+          {},
+          {}
+        },
+        {//other inputs
+          {0, 0}
+        }
+      },
     };
 
     boolean[] isLocationMagicTestAnswers = {
       false,
+      true,
       true,
     };
 
