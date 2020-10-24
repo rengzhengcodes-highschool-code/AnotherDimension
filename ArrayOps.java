@@ -84,4 +84,7 @@ public class ArrayOps {
     return true;
   }
 
+  public static boolean isColMagic(int[][] matrix) {
+    return isRowMagic(colsToRows(matrix));
+  }
 }

@@ -11,6 +11,7 @@ public class Tester {
     colsToRowsTester();
     sumColsTester();
     isRowMagicTester();
+    isColMagicTester();
   }
 
   public static void errorMessage() {
@@ -406,10 +407,87 @@ public class Tester {
 
     for (int test = 0; test < isRowMagicTestArrs.length; test++) {
       if (ArrayOps.isRowMagic(isRowMagicTestArrs[test]) == isRowMagicTestAnswers[test]) {
-        System.out.println("sumCols function passed test at index: " + test);
+        System.out.println("isRowMagic function passed test at index: " + test);
       } else {
         errorMessage();
-        System.out.println("sumCols function failed test at index: " + test);
+        System.out.println("isRowMagic function failed test at index: " + test);
+      }
+    }
+  }
+
+  public static void isColMagicTester() {
+    System.out.println("\n isColMagic Function Test \n");
+    int[][][] isColMagicTestArrs = {
+      {//index 0
+        {0,0,0,0,0},
+        {0,0,0,0,0}
+      },
+      {//index 1
+        {}
+      },
+      {//index 2
+        {0}
+      },
+      {//index 3
+        {10}
+      },
+      {//index 4
+        {1, 23, 2}
+      },
+      {//index 5
+        {1, 2, 3, 4},
+        {-2, 3, 4, 5},
+        {-1, -1, -1, 13},
+        {20, -9, -3, 2}
+      },
+      {//index 6
+        {1, 2, 32, 4},
+        {-82, 763, 43, 95},
+        {-21, 231, -54351, 123},
+        {2230, -39, -23, 2443}
+      },
+      {//index 7
+        {1},
+        {2},
+      },
+      {//index 8
+        {1, -2, -1, 20},
+        {2, 3, -1, -9},
+        {3, 4, -1, -3},
+        {4, 5, 13, 2}
+      },
+      {//index 9
+        {1, 2, 3, 4},
+        {2, 3, 4, 1},
+        {3, 4, 1, 2},
+      },
+      {//index 10
+        {1, 1, 1},
+        {2, 2, 2},
+        {3, 3, 3}
+      }
+    };
+
+    boolean[] isColMagicTestAnswers = {
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      false,
+      true,
+      true,
+      false,
+      true
+    };
+
+    for (int test = 0; test < isColMagicTestArrs.length; test++) {
+      if (ArrayOps.isColMagic(isColMagicTestArrs[test]) == isColMagicTestAnswers[test]) {
+        System.out.println("isColMagic function passed test at index: " + test);
+      } else {
+        errorMessage();
+        System.out.println("isColMagic function failed test at index: " + test);
       }
     }
   }
