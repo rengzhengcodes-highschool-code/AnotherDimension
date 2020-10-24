@@ -530,6 +530,41 @@ public class Tester {
         System.out.println("isLocationMagic function failed test at index: " + test);
       }
     }
+    isLocationMagicTesterSudoku();
   }
-  
+
+  public static void isLocationMagicTesterSudoku() {
+    System.out.println("\n isLocationMagic Function Test but Sudoku \n");       //due to how a sudoku board is set up, all rows and columns contain the same digits and thus have the same sum. All positions on a sudoku board should evaluate as true for isLocationMagic.
+    int[][] sudokuBoard = {
+      {5, 3, 4, 6, 7, 8, 9, 1, 2},
+      {6, 7, 2, 1, 9, 5, 3, 4, 8},
+      {1, 9, 8, 3, 4, 2, 5, 6, 7},
+      {8, 5, 9, 7, 6, 1, 4, 2, 3},
+      {4, 2, 6, 8, 5, 3, 7, 9, 1},
+      {7, 1, 3, 9, 2, 4, 8, 5, 6},
+      {9, 6, 1, 5, 3, 7, 2, 8, 4},
+      {2, 8, 7, 4, 1, 9, 6, 3, 5},
+      {3, 4, 5, 2, 8, 6, 1, 7, 9}
+    };
+
+    boolean failed = false;
+
+    for (int row = 0; row < 9; row++) {
+      for (int column = 0; column < 9; column++) {
+        if (ArrayOps.isLocationMagic(sudokuBoard, row, column) == true) {
+          System.out.println("Sudoku board point evaluated correctly at x: " + (column + 1) + " | y: " + (row + 1));
+        } else {
+          errorMessage();
+          System.out.println("Sudoku board point evaluated incorrectly at x: " + (column + 1) + " | y: " + (row + 1));
+          failed = true;
+        }
+      }
+    }
+    if (failed) {
+      System.out.println("Sudoku test was failed somewhere.");
+    }else {
+      System.out.println("Sudoku test fully succeded.");
+    }
+  }
+
 }
