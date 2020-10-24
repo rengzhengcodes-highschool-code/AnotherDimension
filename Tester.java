@@ -26,6 +26,7 @@ public class Tester {
       {{0}, {0}},
       {{1, 2, 3, 4, 5}, {15}},
       {{-1, 1, 3}, {3}},
+      {{1, 3, 5}, {9}}
     };
 
     for (int test = 0; test < sumTestArrsAndAnswer.length; test++) {
@@ -62,7 +63,7 @@ public class Tester {
 
   public static void sumRowsTester() {
     System.out.println("\n sumRowTester Function Test \n");
-    int[][][][] sumRowsTestArrsAndAnswer = {                                     //formatting is {test matrix, answer array}
+    int[][][][] sumRowsTestArrsAndAnswer = {                                    //formatting is {test matrix, answer array}
       { //test matrix + answer array array pair.
         {//test matrix
           {},
@@ -84,6 +85,14 @@ public class Tester {
         },//test matrix end
         {{0}}
       }, //test matrix + answer array answer pair sumTestArrsAndAnswer
+      {// matrix and answer array array pair
+        {//test matrix
+          {1, 0, 12, -1},
+          {7, -2, 2, 1},
+          {-5,-2, 2, -9}
+        },//test matrix end
+        {{12, 8, -14}}
+      },//matrix and answer array array pair end
     };
 
     for (int test = 0; test < sumRowsTestArrsAndAnswer.length; test++) {
@@ -116,7 +125,15 @@ public class Tester {
           {0}
         },//test matrix end
         {{0}} //answer array.
-      } //test matrix + answer array answer pair end
+      }, //test matrix + answer array answer pair end
+      {// matrix and answer array array pair
+        {//test matrix
+          {1, 0, 12, -1},
+          {7, -2, 2, 1},
+          {-5,-2, 2, -9}
+        },//test matrix end
+        {{12, 7, 2}}
+      },//matrix and answer array array pair end
     };
 
     for (int test = 0; test < largestInRowsTestArrsAndAnswer.length; test++) {
@@ -155,6 +172,14 @@ public class Tester {
           {-1, 1, 3}
         },//test matrix end
         {{19}}
+      },//matrix and answer array array pair end
+      {// matrix and answer array array pair
+        {//test matrix
+          {1, 0, 12, -1},
+          {7, -2, 2, 1},
+          {-5,-2, 2, -9}
+        },//test matrix end
+        {{6}}
       },//matrix and answer array array pair end
     };
 
@@ -292,6 +317,14 @@ public class Tester {
         },//test matrix end
         {{11}}//answer array. It's inside another array like the previous answers to compensate for the extra dimension.
       }, //test matrix + answer array answer pair end
+      { //test matrix + answer array array pair.
+        {//test matrix
+          {1, 0, 12, -1},
+          {7, -2, 2, 1},
+          {-5, -2, 2, -9}
+        },//test matrix end
+        {{3, -4, 16, -9}}//answer array. It's inside another array like the previous answers to compensate for the extra dimension.
+      }, //test matrix + answer array answer pair end
     };
 
     for (int test = 0; test < sumColsTestArrsAndAnswer.length; test++) {
@@ -306,7 +339,7 @@ public class Tester {
 
   public static void isRowMagicTester() {
     System.out.println("\n isRowMagic Function Test \n");
-    int[][][] isRowMagicArrs = {
+    int[][][] isRowMagicTestArrs = {
       {//index 0
         {0,0,0,0,0},
         {0,0,0,0,0}
@@ -338,22 +371,41 @@ public class Tester {
       {//index 7
         {1},
         {2},
+      },
+      {//index 8
+        {1, 2, 3, 4},
+        {2, 3, 4, 1},
+        {3, 4, 1, 2}
+      },
+      {//index 9
+        {1, -2, -1, 20},
+        {2, 3, -1, -9},
+        {3, 4, -1, -3},
+        {4, 5, 13, 2}
+      },
+      {//index 10
+        {1, 1, 1},
+        {2, 2, 2},
+        {3, 3, 3}
       }
     };
 
-    boolean[] isRowMagicAnswers = {
+    boolean[] isRowMagicTestAnswers = {
       true,
       true,
       true,
       true,
       true,
+      true,
+      false,
+      false,
       true,
       false,
       false,
     };
 
-    for (int test = 0; test < isRowMagicArrs.length; test++) {
-      if (ArrayOps.isRowMagic(isRowMagicArrs[test]) == isRowMagicAnswers[test]) {
+    for (int test = 0; test < isRowMagicTestArrs.length; test++) {
+      if (ArrayOps.isRowMagic(isRowMagicTestArrs[test]) == isRowMagicTestAnswers[test]) {
         System.out.println("sumCols function passed test at index: " + test);
       } else {
         errorMessage();
