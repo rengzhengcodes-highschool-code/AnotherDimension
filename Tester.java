@@ -12,6 +12,7 @@ public class Tester {
     sumColsTester();
     isRowMagicTester();
     isColMagicTester();
+    isLocationMagicTester();
   }
 
   public static void errorMessage() {
@@ -492,4 +493,43 @@ public class Tester {
     }
   }
 
+  public static void isLocationMagicTester() {
+    System.out.println("\n isLocationMagic Function Test \n");
+    int[][][][] isLocationMagicTestArrs = {                                     //tests are nested inside of master array, and inside each test array is an array with the matrix and an array with the input coords.
+      {//test array 0
+        {//matrix
+          {2, 4, 2},
+          {2, 2, 2}
+        },
+        {//other inputs
+          {0, 1}
+        }
+      },
+      {//test array 1
+        {//matrix
+          {2, 4, 2},
+          {2, 2, 2}
+        },
+        {//other inputs
+          {1, 1}
+        }
+      },
+    };
+
+    boolean[] isLocationMagicTestAnswers = {
+      false,
+      true,
+    };
+
+    for (int test = 0; test < isLocationMagicTestArrs.length; test++) {
+      int[][][] currentTest = isLocationMagicTestArrs[test];
+      if (ArrayOps.isLocationMagic(currentTest[0], currentTest[1][0][0], currentTest[1][0][1]) == isLocationMagicTestAnswers[test]) {
+        System.out.println("isLocationMagic function passed test at index: " + test);
+      } else {
+        errorMessage();
+        System.out.println("isLocationMagic function failed test at index: " + test);
+      }
+    }
+  }
+  
 }
