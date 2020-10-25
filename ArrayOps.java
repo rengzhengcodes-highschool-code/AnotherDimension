@@ -68,7 +68,7 @@ public class ArrayOps {
     return colsAsRows;
   }
 
-  public static int[] sumCols(int[][] matrix) {                                 //function doesn't work if empty array in columns (so {{}} ) doesn't work.
+  public static int[] sumCols(int[][] matrix) {                                 
     return sumRows(colsToRows(matrix));
   }
 
